@@ -1,0 +1,201 @@
+/* Tema clássico LaLiga */
+:root {
+  --la-vermelho: #c8102e;
+  --la-azul: #003087;
+  --la-cinza: #f5f5f5;
+  --la-texto: #111;
+}
+
+/* Corpo */
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--la-cinza);
+  color: var(--la-texto);
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  text-align: center;
+  padding: 20px 10px;
+  background: var(--la-azul);
+  color: white;
+}
+
+.cabecalho .sub {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #ffd700;
+}
+
+/* Container principal */
+.container {
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
+/* Tabela de classificação */
+.tabelaCard {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.tabelaCard table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabelaCard th,
+.tabelaCard td {
+  text-align: center;
+  padding: 8px 6px;
+}
+
+.tabelaCard th {
+  background: var(--la-vermelho);
+  color: white;
+  border-radius: 6px;
+}
+
+.tabelaCard tr.destaque {
+  background: #ffe8e8;
+  font-weight: bold;
+}
+
+/* Botões */
+.btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--la-azul);
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background: var(--la-vermelho);
+}
+
+.btn.danger {
+  background: #ff4d4f;
+}
+
+.btn.danger:hover {
+  background: #c8102e;
+}
+
+.btn.small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Rodadas estilo chaves */
+.rodadasContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Container de cada rodada */
+.chavesContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px; /* maior espaçamento entre os confrontos */
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Bloco de confronto */
+.blocoConfronto {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 12px 16px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.blocoConfronto:hover {
+  transform: translateY(-2px);
+}
+
+/* Cada jogo dentro do bloco */
+.jogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputGol {
+  width: 40px;
+  padding: 4px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.x {
+  font-weight: bold;
+  margin: 0 4px;
+}
+
+/* Placar agregado */
+.agregadoConfronto {
+  text-align: center;
+  font-weight: 700;
+  color: var(--la-vermelho);
+}
+
+/* Botões dentro do confronto */
+.botoesConfronto {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+/* Linhas verticais e horizontais (visual) */
+.chavesContainer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  height: 100%;
+  width: 2px;
+  background: var(--la-vermelho);
+}
+
+.blocoConfronto::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: var(--la-vermelho);
+}
+
+/* Última rodada não precisa de linha à direita */
+.rodadasContainer > div:last-child .blocoConfronto::after {
+  display: none;
+}
+
+/* Responsivo */
+@media (max-width: 1000px) {
+  .chavesContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
