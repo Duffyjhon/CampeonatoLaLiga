@@ -25,3 +25,27 @@ git clone https://github.com/Duffyjhon/CampeonatoLaLiga.git
 
 # Execute o sistema
 python main.py
+
+📁 Estrutura do Projeto
+CampeonatoLaLiga/
+├── main.py                 # Arquivo principal - inicia a simulação
+├── campeonato.py          # Classe Campeonato - gerencia toda a competição
+├── time.py                # Classe Time - representa cada time com estatísticas
+├── partida.py             # Classe Partida - simula jogos entre times
+├── dados_campeonato.json  # Base de dados com informações dos times
+└── README.md              # Documentação do projeto
+
+💡 Conceitos Aplicados
+POO (Programação Orientada a Objetos)
+
+Manipulação de JSON
+
+Algoritmos de Simulação
+
+Estruturas de Dados
+
+Persistência de Dados
+
+👨💻 Autor
+João Vitor Mendonça
+Estudante de Análise e Desenvolvimento de Sistemas
