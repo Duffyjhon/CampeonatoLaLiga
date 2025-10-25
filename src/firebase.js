@@ -1,20 +1,22 @@
-// src/firebase.js
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// ⚠️ Substitua pelos dados do seu projeto Firebase
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  databaseURL: "SUA_DATABASE_URL",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_STORAGE_BUCKET",
-  messagingSenderId: "SEU_SENDER_ID",
-  appId: "SEU_APP_ID",
+  apiKey: "AIzaSyAyx2lVm0pwkeXH0c3nQ7R--rBeqR35cCk",
+  authDomain: "torneio-laliga-2026.firebaseapp.com",
+  databaseURL: "https://torneio-laliga-2026-default-rtdb.firebaseio.com",
+  projectId: "torneio-laliga-2026",
+  storageBucket: "torneio-laliga-2026.firebasestorage.app",
+  messagingSenderId: "1012731638472",
+  appId: "1:1012731638472:web:75c40927ce87bda1a5ebfd",
+  measurementId: "G-RCQBGXXPBB",
 };
 
-// Inicializa o Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Exporta o banco de dados (Realtime Database)
 export const db = getDatabase(app);

@@ -1,76 +1,182 @@
-.App {
-  text-align: center;
-  background-color: #f2f2f2;
-  color: #222;
-  padding: 20px;
+/* App.css (modo clássico escuro) */
+:root {
+  --accent: #ffcc00;
+  --danger: #ff3333;
+  --muted: #aab4bf;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #0b0f14;
+  color: #fff;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+.app {
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
-
-h1 {
-  color: #d90429;
-  margin-bottom: 20px;
+.cabecalho {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(90deg, #071022, #071627);
 }
-
-h2 {
-  margin-top: 40px;
-  color: #1d3557;
+.cabecalho h1 {
+  color: var(--accent);
+  margin: 0;
 }
-
-.reiniciar {
-  background-color: #d90429;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  transition: 0.2s;
+.cabecalho .sub {
+  color: var(--muted);
+  margin-top: 6px;
 }
-.reiniciar:hover {
-  background-color: #a1031e;
-}
-
-.rodada {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 15px;
+.container {
+  max-width: 1200px;
   margin: 20px auto;
-  width: 90%;
-  max-width: 700px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
-
+.tabelaCard {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 16px;
+  border-radius: 10px;
+}
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.tabela thead th {
+  background: linear-gradient(90deg, var(--accent), #c84b3a);
+  padding: 10px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.tabela td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.timeNome {
+  text-align: left;
+  padding-left: 12px;
+  color: #eaf4ff;
+  font-weight: 600;
+}
+.pontos {
+  font-weight: 800;
+  color: var(--accent);
+}
+.destaque {
+  background: linear-gradient(90deg, rgba(246, 177, 0, 0.06), transparent);
+  border-left: 4px solid #f6b100;
+}
+.jogosArea {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.rodadaBlock {
+  background: #0f1724;
+  padding: 16px;
+  border-radius: 10px;
+}
+.rodadaTitle {
+  color: var(--accent);
+  margin: 0 0 12px 0;
+}
+.blocoConfronto {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
 .jogo {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 8px 0;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-
-input {
-  width: 40px;
+.timeNome {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #111827;
+}
+.inputGol {
+  width: 56px;
   text-align: center;
-  border: 1px solid #999;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+  background: #e9edf2;
+  color: #000;
+  font-weight: 700;
 }
-
-table {
-  margin: 20px auto;
-  border-collapse: collapse;
-  width: 90%;
-  max-width: 700px;
+.x {
+  font-weight: 800;
+  margin: 0 6px;
+  color: var(--muted);
 }
-
-th,
-td {
-  border: 1px solid #999;
-  padding: 8px;
+.agregadoConfronto {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 8px;
 }
-
-th {
-  background-color: #1d3557;
-  color: white;
+.botoesConfronto {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #0b1220;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn.danger {
+  background: var(--danger);
+  color: #fff;
+}
+.btn.big {
+  padding: 12px 18px;
+  font-size: 15px;
+  border-radius: 12px;
+}
+.rodape {
+  text-align: center;
+  padding: 12px;
+}
+.smallNote {
+  color: var(--muted);
+  margin-top: 8px;
+}
+@media (max-width: 900px) {
+  .container {
+    padding: 12px;
+  }
+  .jogo {
+    gap: 6px;
+  }
 }
