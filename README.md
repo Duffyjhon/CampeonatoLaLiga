@@ -1,51 +1,128 @@
-# ⚽ Sistema de Simulação do Campeonato La Liga
+# 🏆 Campeonato La Liga — Pontos Corridos
 
-Sistema completo em Python para simulação de temporada do campeonato espanhol La Liga, incluindo classificação, partidas e estatísticas.
+Projeto desenvolvido em **React + Firebase** que simula um campeonato de futebol com sistema de **pontos corridos**, jogos de **ida e volta** e **tabela atualizada automaticamente** em tempo real.
 
-## 🎯 Funcionalidades
+---
 
-- **✅ Simulação de Partidas**: Geração de resultados realistas com gols baseados em força do time
-- **✅ Tabela de Classificação**: Atualização automática com pontos, vitórias, derrotas e saldo de gols
-- **✅ Sistema de Pontuação**: Implementação das regras oficiais do futebol (3pt vitória, 1pt empate)
-- **✅ Estatísticas Detalhadas**: Gols pró/contra, saldo, aproveitamento
-- **✅ Persistência de Dados**: Salvamento e carregamento do progresso do campeonato
+## ⚙️ Tecnologias utilizadas
 
-## 🛠 Tecnologias Utilizadas
+- ⚛️ **React.js** — Framework para construção da interface  
+- 🔥 **Firebase Realtime Database** — Para salvar e sincronizar os dados dos jogos e pontuação  
+- 💅 **CSS Clássico (modo claro)** — Visual limpo e tradicional para fácil leitura  
+- 🌐 **CodeSandbox / GitHub Pages** — Para hospedagem do projeto online  
 
-- **Python 3**
-- **Programação Orientada a Objetos** (Classes Time, Partida, Campeonato)
-- **Manipulação de Arquivos** (JSON para persistência)
-- **Algoritmos de Simulação** e Cálculos Estatísticos
+---
 
-## 🚀 Como Executar
+## 🚀 Como executar o projeto localmente
 
+1️⃣ Clone o repositório:
 ```bash
-# Clone o repositório
-git clone https://github.com/Duffyjhon/CampeonatoLaLiga.git
+git clone https://github.com/SEU_USUARIO/CampeonatoLaLiga.git
+2️⃣ Instale as dependências:
 
-# Execute o sistema
-python main.py
+bash
+Copiar código
+npm install
+3️⃣ Configure o Firebase:
 
-📁 Estrutura do Projeto
-CampeonatoLaLiga/
-├── main.py                 # Arquivo principal - inicia a simulação
-├── campeonato.py          # Classe Campeonato - gerencia toda a competição
-├── time.py                # Classe Time - representa cada time com estatísticas
-├── partida.py             # Classe Partida - simula jogos entre times
-├── dados_campeonato.json  # Base de dados com informações dos times
-└── README.md              # Documentação do projeto
+Crie um projeto no Firebase Console
 
-💡 Conceitos Aplicados
-POO (Programação Orientada a Objetos)
+Ative o Realtime Database
 
-Manipulação de JSON
+Copie as credenciais e cole no arquivo src/firebase.js conforme o exemplo:
 
-Algoritmos de Simulação
+javascript
+Copiar código
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
-Estruturas de Dados
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "SEU_DOMINIO.firebaseapp.com",
+  databaseURL: "https://SEU_PROJETO.firebaseio.com",
+  projectId: "SEU_ID_PROJETO",
+  storageBucket: "SEU_BUCKET.appspot.com",
+  messagingSenderId: "SEU_SENDER_ID",
+  appId: "SEU_APP_ID"
+};
 
-Persistência de Dados
+const app = initializeApp(firebaseConfig);
+export const db = getDatabase(app);
+4️⃣ Execute o projeto:
 
-👨💻 Autor
+bash
+Copiar código
+npm start
+5️⃣ Abra no navegador:
+
+arduino
+Copiar código
+http://localhost:3000
+👥 Participantes do campeonato
+João
+
+Diney
+
+Pastor
+
+Heliton
+
+Davi
+
+Fulão
+
+Roni
+
+Sistema de ida e volta entre todos os participantes.
+
+🧮 Regras da tabela
+✅ Vitória: 3 pontos
+
+⚖️ Empate: 1 ponto
+
+❌ Derrota: 0 pontos
+
+🏅 Critérios de desempate:
+
+Saldo de gols
+
+Gols marcados
+
+Confronto direto
+
+💾 Funcionalidades
+Inserção de gols por partida
+
+Cálculo automático da classificação
+
+Persistência no Firebase (dados salvos para todos os usuários)
+
+Atualização em tempo real da tabela
+
+Layout limpo e modo clássico
+
+🌍 Link público do projeto
+🔗 Acesse o site: https://lklm7f-3000.csb.app/
+
+(substitua pelo link do CodeSandbox ou hospedagem do Firebase Hosting quando disponível)
+
+🧑‍💻 Desenvolvido por
 João Vitor Mendonça
-Estudante de Análise e Desenvolvimento de Sistemas
+🔗 LinkedIn
+💻 GitHub
+
+🧱 Licença
+Este projeto é de uso livre para fins educacionais e demonstrações.
+Créditos obrigatórios ao autor em caso de reprodução pública.
+
+yaml
+Copiar código
+
+---
+
+
+
+
+
+
+
